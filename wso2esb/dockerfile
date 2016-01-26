@@ -1,0 +1,11 @@
+FROM psl_cts_wso2esb:latest
+
+# ESB https port
+EXPOSE 9443
+# ESB http pass-through transport port
+EXPOSE 8280
+# ESB https pass-through transport port
+EXPOSE 8243
+
+ENV JAVA_HOME=/usr
+CMD ["/opt/wso2esb-4.9.0/bin/wso2server.sh"]

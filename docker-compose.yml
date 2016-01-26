@@ -1,0 +1,21 @@
+wso2:
+    build: ./wso2esb
+    ports:
+        - "9443:9443"
+        - "8280:8280"
+        - "8243:8243"
+    links:
+        - nginx
+# haproxy:
+#     image: tutum/haproxy
+#     links:
+#         - app
+#     environment:
+#         - BACKEND_PORT=5000
+# redis:
+#     image: redis
+nginx:
+    build: ./nginx
+    ports:
+        - "80:80"
+        - "8080:8080"

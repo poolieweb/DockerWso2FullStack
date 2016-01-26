@@ -1,0 +1,8 @@
+FROM psl_cts_nginx:latest
+ADD public/ /var/www
+COPY start /start
+RUN chmod +x /start
+COPY nginx.tmpl /nginx.tmpl
+CMD /start
+EXPOSE 80 8080
+
